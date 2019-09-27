@@ -55,8 +55,8 @@ public class MainViewController
 	{
 		setListeners();
 		this.series.setName("Pi");
-		this.scatterChart.getData().add(this.series);
-		this.barChart.getData().setAll(new XYChart.Series[]{this.barChartSeries});
+		this.scatterChart.getData().add(series);
+		this.barChart.getData().setAll(barChartSeries);
 	}
 
 
@@ -90,7 +90,7 @@ public class MainViewController
 			Platform.runLater(() ->
 			{
 				System.out.println(newValue);
-				series.getData().add(new XYChart.Data<>(scatterChart.getData().size(), textAreaPi.getText()));
+				series.getData().add(new XYChart.Data<>(String.valueOf(series.getData().size()), Double.parseDouble(textAreaPi.getText())));
 				fillBarChart(textAreaPi.getText());
 			});
 		});
