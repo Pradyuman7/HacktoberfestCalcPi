@@ -1,0 +1,3 @@
+#textAreaPi .scroll-pane {
+    -fx-vbar-policy : never;
+}
